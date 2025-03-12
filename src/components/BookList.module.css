@@ -1,0 +1,12 @@
+.books{
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(4, auto);
+}
+
+.books > div{
+  border: 1px solid black;
+  width: 300px;
+  text-align: center;
+  margin-top: 16px;
+}

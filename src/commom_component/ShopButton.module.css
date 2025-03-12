@@ -1,0 +1,27 @@
+.btn{
+  padding: 4px 16px;
+  font-size: 0.7rem;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+  /* 애니메이션 효과 */
+}
+
+.btn:hover{
+  background-color:rgb(138, 43, 226);
+}
+
+.small{
+  width: 80px;
+}
+
+.normal{
+  width: 100px;
+}
+
+.large{
+  width: 120px;
+}
+
