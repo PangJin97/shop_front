@@ -39,6 +39,11 @@ const Login = () => {
         alert('로그인 실패')
       }else{
         alert('로그인 성공')
+        //로그인 성공하면 
+        //sessionStroage에 로그인하는 회원의 아이디, 이름, 권한 정보를 저장한다. 
+        sessionStorage.setItem('회원아이디',res.data.userId)
+        sessionStorage.setItem('회원이름',res.data.userName)
+        sessionStorage.setItem('회원권한정보',res.data.userRoll)
       }
     })
     .catch((error)=>{
