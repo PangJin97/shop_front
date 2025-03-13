@@ -53,6 +53,8 @@ function App() {
       <Routes>
         {/* 유저가 접속하는 페이지 */}
         <Route path="/" element={<UserLayout loginInfo={loginInfo} setLoginInfo={setLoginInfo}/>}>
+                                       {/* login글자와 logout 글자가있는 userHeader에 보내기위해 우선
+                                       UserLayout에 보냄  */}
         
           {/* 상품목록 페이지 */}
           <Route path="" element={<BookList />} />

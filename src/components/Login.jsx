@@ -83,6 +83,7 @@ const Login = ({ setLoginInfo }) => {
 
           //스프링 pdf 4 참조 (JSON 개념)
           setLoginInfo(loginInfo);
+          //app.jsx에 있는 setLoginInfo를 프롭스로 받는다. 그러면
           //loginInfo가 있는 state변수가 있는 컴포넌트가 재랜더링 => app이 재 랜더링
 
           nav("/");
