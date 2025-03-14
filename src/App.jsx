@@ -24,8 +24,11 @@ function App() {
 
     //Login.jsx에서 로그인을 성공하면 setLoginInfo()함수를 이용해서 
     //로그인한 정보를 loginInfo변수에 저장한다
+   
     //하지만 이 상태에서 새로고침하면 loginInfo변수에 저장된 로그인 정보가 사라진다. 
+    
     //그래서 새로고침을 하더라도 sessionStorage에 저장된 데이터로 로그인 정보를 유지시켜주기 위해 
+   
     //아래의 useEffect에서 한 번 더 로그인 정보를 가져온다 
 
      useEffect(() => {
@@ -42,8 +45,6 @@ function App() {
           setLoginInfo(JSON.parse(strLoginData));
         }
       }, []);
-
-      
 
 
   return (
