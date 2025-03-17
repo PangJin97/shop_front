@@ -144,6 +144,10 @@ const ItemForm = () => {
             type="number"
           />
         </div>
+        <div>
+          <p>도서 이미지</p>
+          <input type="file" />
+        </div>
       </div>
       <div>
         {/* 등록 버튼 클릭시 도서 실행 */}

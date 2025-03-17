@@ -86,8 +86,11 @@ const Login = ({ setLoginInfo }) => {
           //app.jsx에 있는 setLoginInfo를 프롭스로 받는다. 그러면
           //loginInfo가 있는 state변수가 있는 컴포넌트가 재랜더링 => app이 재 랜더링
 
-          nav("/");
+          nav(loginInfo.userRoll === 'USER' ? '/': '/admin/reg-item' );
           //로그인 성공하면 첫 페이지로 이동
+          //로그인한 유저의 권한에 따라 이동할 페이지 지정 
+          //일반 회원 : 상품 목록 페이지
+          //관리자 : 상품 등록 페이지 
         }
       })
       .catch((error) => {

@@ -32,7 +32,7 @@ const UserHeader = ({loginInfo, setLoginInfo}) => {
             <p onClick={()=>{
               sessionStorage.removeItem('loginInfo')
               setLoginInfo(null)
-              nav('login')
+              nav('/')
               alert('로그아웃 되었습니다')
             }}>Logout</p>
           </>
