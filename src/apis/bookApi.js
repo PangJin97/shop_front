@@ -56,8 +56,8 @@ export const insertCategory = (newCategory) => {
  * }) 
  */
 
-export const insertBooks = (insertBook) => {
-  const response = axios.post("/api/books", insertBook);
+export const insertBooks = (insertBook, fileConfig) => {
+  const response = axios.post("/api/books", insertBook, fileConfig);
   return response;
 };
 

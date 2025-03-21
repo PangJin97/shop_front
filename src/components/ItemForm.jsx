@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getCategoryList, insertBooks } from "../apis/bookApi";
 import ShopInput from "../commom_component/ShopInput";
 import ShopButton from "../commom_component/ShopButton";
+import { Form } from "react-router-dom";
 
 //   ./ => 현제 위치
 //    .. // => 상위폴더 
@@ -40,6 +41,12 @@ const ItemForm = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  //이미지 등록 
+  const fileConfig = { headers: { "Content-Type": "multipart/form-data" } };
+
+  const [file, setfile] = useState(null)
+
 
   return (
     <div className="item-form-container">
@@ -146,7 +153,10 @@ const ItemForm = () => {
         </div>
         <div>
           <p>도서 이미지</p>
-          <input type="file" />
+          <input type="file" onChange={(e)=>{setfile(e.target.value)}}/>
+          {/* 상품목록에서 나오는 이미지 */}
+          <input type="file" onChange={()=>{}}/>
+          {/* 상품상세정보에 나오는 */}
         </div>
       </div>
       <div>
@@ -168,9 +178,14 @@ const ItemForm = () => {
         </button> */}
 
           <ShopButton title="등 록" size="small" click={(e) => {
+            const form = new FormData();
+            
+            form.append('file', file)
+            form.append()
+
             // 프롭스를 통해 값을 전달한다. ItemForm은 부모 컴포넌트 이기에...
             // click 값을 ShopButton에 보내면 onClick 안에 click 실행 
-            insertBooks(insertBook)
+            insertBooks(form,fileConfig)
             //bookApi export 활용
               .then((res) => {
                 console.log(res.data);

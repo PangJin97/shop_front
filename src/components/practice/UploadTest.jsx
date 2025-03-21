@@ -51,6 +51,12 @@ const UploadTest = () => {
       .catch();
   };
 
+  //===========================================
+  //선택한 여러파일을 저장할 변수
+  //다중 전송 
+  const [secondFiles, setSecondFiles] = useState(null);
+
+
   return (
     <div>
       <input
@@ -78,6 +84,24 @@ const UploadTest = () => {
       >
         파일전송1
       </button>
+      <br />
+     
+      {/* 다중 파일전송 */}
+      <input type="file" multiple
+        onChange={(e)=>{setSecondFiles(e.target.files)}} />
+      <button type="button" onClick={(e)=>{
+        
+        const form2 = new FormData();
+
+        //파일 첨부를 했을 때만
+        if(secondFiles != null){
+          //첨부한 파일 갯수만큼 formData에 저장
+          for(const eachFile of secondFiles){
+            form2.append('files',eachFile)
+          }
+        } 
+        axios.post('/api/test/upload2',form2,fileConfig).then().catch()
+      }}>다중 파일 전송</button>
     </div>
   );
 };
