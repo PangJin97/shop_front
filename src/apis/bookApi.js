@@ -56,7 +56,9 @@ export const insertCategory = (newCategory) => {
  * }) 
  */
 
-export const insertBooks = (insertBook, fileConfig) => {
+export const insertBooks = (insertBook) => {
+  const fileConfig = { headers: { "Content-Type": "multipart/form-data" } };
+
   const response = axios.post("/api/books", insertBook, fileConfig);
   return response;
 };
