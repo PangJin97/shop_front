@@ -205,8 +205,8 @@ const ItemForm = () => {
             insertBooks(regForm)
             //bookApi export 활용
               .then((res) => {
-                console.log(res.data);
                 alert("등록완료");
+                console.log(res.data)
               })
               .catch((error) => {
                 console.log(error);
