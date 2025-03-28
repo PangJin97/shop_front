@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./UserHeader.module.css";
 import { useNavigate } from "react-router-dom";
-import UserLogin from "./UserJoin";
+import UserLogin from "../member/UserJoin";
 
 const UserHeader = ({loginInfo, setLoginInfo}) => {
   const nav = useNavigate();

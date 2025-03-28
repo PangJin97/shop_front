@@ -1,9 +1,7 @@
 import axios from "axios";
 import styles from "./CateManage.module.css";
 import React, { useEffect, useState } from "react";
-import * as bookApi from "../apis/bookApi";
-
-
+import * as bookApi from "../../apis/bookApi";
 
 const CateMange = () => {
   //오류 메세지를 저장할 변수
@@ -16,8 +14,9 @@ const CateMange = () => {
   const [cateList, setCateList] = useState([]);
 
   useEffect(() => {
-    bookApi.getCategoryList()
-    //bookApi 활용 
+    bookApi
+      .getCategoryList()
+      //bookApi 활용
       .then((res) => {
         setCateList(res.data);
         console.log(res.data);
@@ -42,7 +41,8 @@ const CateMange = () => {
 
     //키보드 엔터를 누르면
 
-      bookApi.insertCategory(newCategory)
+    bookApi
+      .insertCategory(newCategory)
       //bookApi 활용
       .then((res) => {
         console.log(res.data);

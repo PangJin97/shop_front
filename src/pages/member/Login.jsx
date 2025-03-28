@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Login.module.css";
-import ShopInput from "../commom_component/ShopInput";
-import ShopButton from "../commom_component/ShopButton";
-import { loginUser } from "../apis/userApi";
+import ShopInput from "../../commom_component/ShopInput";
+import ShopButton from "../../commom_component/ShopButton";
+import { loginUser } from "../../apis/userApi";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ setLoginInfo }) => {
@@ -37,9 +37,7 @@ const Login = ({ setLoginInfo }) => {
       .then((res) => {
         console.log(res.data);
         //자바에서 null데이가 넘어오면 리엑트는 ''(빈문자)로 받는다
-        if (res.data === "") {
-          alert("로그인 실패");
-        } else {
+        
           alert("로그인 성공");
           //로그인 성공하면
           //sessionStroage에 로그인하는 회원의 아이디, 이름, 권한 정보를 저장한다.
@@ -91,10 +89,20 @@ const Login = ({ setLoginInfo }) => {
           //로그인한 유저의 권한에 따라 이동할 페이지 지정 
           //일반 회원 : 상품 목록 페이지
           //관리자 : 상품 등록 페이지 
-        }
+        
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((e) => {
+        console.log(e)
+        console.log(e.response.data)
+        console.log(e.status);
+
+        if(e.status === 404){
+          alert(e.response.data);
+        }
+        else{
+          console.log(e)
+          alert("오류발생. 관리자에 문의")
+        }
       });
   };
 

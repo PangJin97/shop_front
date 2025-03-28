@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import ShopInput from "../commom_component/ShopInput";
-import ShopSelect from "../commom_component/ShopSelect";
-import ShopButton from "../commom_component/ShopButton";
-import { regUser } from "../apis/userApi";
+import ShopInput from "../../commom_component/ShopInput";
+import ShopSelect from "../../commom_component/ShopSelect";
+import ShopButton from "../../commom_component/ShopButton";
+import { regUser } from "../../apis/userApi";
 
 const UserLogin = () => {
   //falsy한 데이터 

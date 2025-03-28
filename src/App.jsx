@@ -1,22 +1,16 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import UserLayout from "./components/UserLayout";
-import AdminLayout from "./components/AdminLayout";
-import ItemForm from "./components/ItemForm";
-import BookList from "./components/BookList";
-import CateMange from "./components/CateMange";
-
-import State변경함수흐름 from "./components/practice/State변경함수흐름";
-import Axios흐름 from "./components/practice/Axios흐름";
-import ShopButton from "./commom_component/ShopButton";
-import ShopInput from "./commom_component/ShopInput";
-import UserLogin from "./components/UserJoin";
-import State변경함수흐름2 from "./components/practice/State변경함수흐름2";
-import State변경함수흐름3 from "./components/practice/State변경함수흐름3";
-import Login from "./components/Login";
-import StorageTest from "./components/practice/StorageTest";
 import { useEffect, useState } from "react";
-import UploadTest from "./components/practice/UploadTest";
+import "./App.css";
+import UserLayout from './pages/common/UserLayout'
+import BookList from './components/BookList'
+import UserLogin from "./pages/member/UserJoin";
+import Login from "./pages/member/Login";
+import AdminLayout from "./pages/common/AdminLayout"
+import ItemForm from "./pages/book/ItemForm";
+import CateMange from "./pages/book/CateMange"
+import { Route, Routes } from "react-router-dom";
+
+
+
 
 function App() {
   //로그인 정보를 저장할 state변수
