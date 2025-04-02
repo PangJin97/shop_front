@@ -16,9 +16,6 @@ import axios from "axios";
 
 //====================================================================================
 
-
-
-
 //해당파일에 도서 카테고리와 도서 관련 axios 기능을 모아놓음
 
 /**
@@ -42,7 +39,6 @@ export const insertCategory = (newCategory) => {
   return response;
 };
 
-
 /**
  * 도서 등록
  * 
@@ -61,4 +57,12 @@ export const insertBooks = (regFrom) => {
   const response = axios.post("/api/books", regFrom, fileConfig);
   return response;
 };
+
+
+//도서 목록 조회 
+
+export const getBookList = () =>{
+  const response = axios.get('/api/books')
+  return response;
+}
 

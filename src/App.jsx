@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import UserLayout from './pages/common/UserLayout'
-import BookList from './components/BookList'
+import BookList from './pages/book/BookList'
 import UserLogin from "./pages/member/UserJoin";
 import Login from "./pages/member/Login";
 import AdminLayout from "./pages/common/AdminLayout"

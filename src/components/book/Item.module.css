@@ -1,0 +1,9 @@
+.bookMain {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.bookMain > img{
+  height: 200px;
+  width: 100%;
+}

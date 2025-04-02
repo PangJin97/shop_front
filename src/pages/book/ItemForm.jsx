@@ -217,7 +217,19 @@ const ItemForm = () => {
               //bookApi export 활용
               .then((res) => {
                 alert("등록완료");
-                console.log(res.data);
+                //데이터 초기화
+                setInsertBook({
+                  bookName: "",
+                  bookPrice: 0,
+                  publisher: "",
+                  bookInfo: "",
+                  bookStock: "",
+                  cateCode: "",
+                })
+
+                setMainImg(null)
+                setSubImg(null)
+
               })
               .catch((error) => {
                 console.log(error);
